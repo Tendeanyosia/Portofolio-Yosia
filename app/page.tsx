@@ -422,13 +422,13 @@ export default function Home() {
         transition={{ duration: 0.6 }}
       >
         <span className="text-sm font-medium tracking-wider text-blue-600 dark:text-blue-400">
-          PENGEMBANG ANTARMUKA (FRONTEND DEVELOPER)
+        FRONTEND DEVELOPER
         </span>
         <h1 className="text-5xl pb-2 pt-2 md:text-6xl font-bold mt-2 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
           Yosia Tendean
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-200 mt-4 leading-relaxed">
-          Saya membangun antarmuka web yang cepat, modern, dan responsif dengan kode bersih dan perhatian pada detail.
+        Antarmuka web bukan hanya soal desain, tapi bagaimana membuat orang merasa nyaman saat menggunakannya. Karena itu, saya selalu berusaha menghadirkan tampilan yang bersih, cepat, dan ramah pengguna.
         </p>
       </motion.div>
 
@@ -499,7 +499,7 @@ export default function Home() {
       >
         <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-blue-500 dark:border-blue-400 shadow-xl">
           <Image
-            src="/assets/Profile.jpg"
+            src="/assets/profile.jpg"
             alt="Yosia Tendean"
             fill
             className="object-cover"

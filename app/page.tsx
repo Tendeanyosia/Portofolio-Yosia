@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import Lanyard from "./components/Lanyard/Lanyard";
 import {
   FaUserGraduate,
   FaCode,
@@ -24,7 +23,6 @@ import {
   FaEnvelope,
   FaMoon,
   FaSun,
-  FaDownload,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -263,46 +261,6 @@ export default function Home() {
   return (
     <div className="min-h-screen transition-colors duration-300">
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 transition-colors duration-500">
-        {/* Download CV Button */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="fixed top-4 right-4 z-50"
-        >
-          <div className="relative group">
-            <motion.a
-              href="/assets/cv.pdf"
-              download="Zonatan_Sihombing_CV.pdf"
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0px 8px 24px rgba(0, 0, 0, 0.2)",
-                background: "linear-gradient(to right, #2563eb, #7c3aed)",
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-4 py-2 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md text-gray-800 dark:text-gray-200 rounded-full font-medium transition-all duration-300 shadow-lg border border-gray-300/50 dark:border-gray-600/50 hover:border-blue-400/50 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white"
-              aria-label="Download my CV"
-            >
-              <motion.span
-                animate={{ y: [0, -2, 0], rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <FaDownload className="text-lg" />
-              </motion.span>
-              <span className="text-sm">CV</span>
-            </motion.a>
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileHover={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2 }}
-              className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-medium px-3 py-1 rounded-lg shadow-md hidden group-hover:block"
-            >
-              Download Resume
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 bg-blue-600"></div>
-            </motion.div>
-          </div>
-        </motion.div>
-
         <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-md">
           <div className="flex items-center justify-between bg-white/90 dark:bg-gray-800/90 backdrop-blur-md px-2 py-1 rounded-full shadow-xl border border-gray-300/50 dark:border-gray-600/50">
             <NavLink
@@ -444,434 +402,355 @@ export default function Home() {
           </div>
         </nav>
 
-        <section
-          id="home"
-          ref={homeRef}
-          className="relative h-screen overflow-hidden"
+<section
+  id="home"
+  ref={homeRef}
+  className="relative h-screen overflow-hidden"
+>
+  <div ref={targetRef} className="absolute inset-0">
+    <motion.div
+      style={{ y, opacity }}
+      className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 dark:from-blue-900/30 dark:via-purple-900/30 dark:to-pink-900/30"
+    />
+  </div>
+
+  <div className="container mx-auto h-full flex items-center px-6 relative z-10">
+    <div className="w-full space-y-8">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <span className="text-sm font-medium tracking-wider text-blue-600 dark:text-blue-400">
+          PENGEMBANG ANTARMUKA (FRONTEND DEVELOPER)
+        </span>
+        <h1 className="text-5xl pb-2 pt-2 md:text-6xl font-bold mt-2 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+          Yosia Tendean
+        </h1>
+        <p className="text-lg text-gray-600 dark:text-gray-200 mt-4 leading-relaxed">
+          Saya membangun antarmuka web yang cepat, modern, dan responsif dengan kode bersih dan perhatian pada detail.
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="flex flex-wrap gap-4"
+      >
+        <a
+          href="#projects"
+          className="px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg font-medium transition-colors shadow-lg"
         >
-          <div ref={targetRef} className="absolute inset-0">
-            <motion.div
-              style={{ y, opacity }}
-              className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 dark:from-blue-900/30 dark:via-purple-900/30 dark:to-pink-900/30"
-            />
-          </div>
-
-          <div className="container mx-auto h-full flex items-center px-6 relative z-10">
-            <div className="w-full md:w-2/3 lg:w-1/2 space-y-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <span className="text-sm font-medium tracking-wider text-blue-600 dark:text-blue-400">
-                  FULL STACK DEVELOPER
-                </span>
-                <h1 className="text-5xl pb-2 pt-2 md:text-6xl font-bold mt-2 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-                  Zonatan Sihombing
-                </h1>
-                <p className="text-lg text-gray-600 dark:text-gray-200 mt-4 leading-relaxed">
-                  I craft exceptional digital experiences with clean, efficient
-                  code and intuitive interfaces that users love.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex flex-wrap gap-4"
-              >
-                <a
-                  href="#projects"
-                  className="px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg font-medium transition-colors shadow-lg"
-                >
-                  View My Work
-                </a>
-                <a
-                  href="#contact"
-                  className="px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg font-medium transition-colors border border-gray-300 dark:border-gray-600 shadow-lg"
-                >
-                  Contact Me
-                </a>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex gap-4 mt-8"
-              >
-                <SocialIcon
-                  href="https://github.com/zonatan"
-                  icon={<FaGithub />}
-                  label="GitHub"
-                  className="hover:bg-gray-800 hover:text-white dark:hover:bg-gray-700 dark:hover:text-white"
-                />
-                <SocialIcon
-                  href="https://linkedin.com/in/zonatan"
-                  icon={<FaLinkedin />}
-                  label="LinkedIn"
-                  className="hover:bg-blue-700 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white"
-                />
-                <SocialIcon
-                  href="https://instagram.com/zonatansihombing_"
-                  icon={<FaInstagram />}
-                  label="Instagram"
-                  className="hover:bg-pink-600 hover:text-white dark:hover:bg-pink-500 dark:hover:text-white"
-                />
-                <SocialIcon
-                  href="mailto:zonatan.sh03@gmail.com"
-                  icon={<FaEnvelope />}
-                  label="Email"
-                  className="hover:bg-red-600 hover:text-white dark:hover:bg-red-500 dark:hover:text-white"
-                />
-              </motion.div>
-            </div>
-
-            <div className="hidden lg:flex lg:w-1/2 justify-center items-center h-screen">
-              <div className="relative w-full h-full">
-                <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
-              </div>
-            </div>
-          </div>
-
-          <TechBubbles />
-        </section>
-
-        <section
-          id="about"
-          ref={aboutRef}
-          className="py-20 bg-gray-50 dark:bg-gray-900 relative overflow-hidden"
+          Lihat Proyek Saya
+        </a>
+        <a
+          href="#contact"
+          className="px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg font-medium transition-colors border border-gray-300 dark:border-gray-600 shadow-lg"
         >
-          <motion.div
-            className="absolute -top-20 -left-20 w-64 h-64 rounded-full bg-blue-200 dark:bg-blue-900/30 blur-3xl opacity-40"
-            animate={{
-              x: [0, 20, 0],
-              y: [0, 30, 0],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut",
-            }}
+          Hubungi Saya
+        </a>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="flex gap-4 mt-8"
+      >
+        <SocialIcon href="https://github.com/Tendeanyosia" icon={<FaGithub />} label="GitHub" />
+        <SocialIcon href="https://linkedin.com/in/yosiatendean" icon={<FaLinkedin />} label="LinkedIn" />
+        <SocialIcon href="https://instagram.com/tndean.12" icon={<FaInstagram />} label="Instagram" />
+        <SocialIcon href="mailto:yosiatendean@gmail.com" icon={<FaEnvelope />} label="Email" />
+      </motion.div>
+    </div>
+  </div>
+
+  <TechBubbles />
+</section>
+
+<section
+  id="about"
+  ref={aboutRef}
+  className="py-20 bg-gray-50 dark:bg-gray-900 relative overflow-hidden"
+>
+  {/* Elemen Latar Animasi */}
+  <motion.div
+    className="absolute -top-20 -left-20 w-64 h-64 rounded-full bg-blue-200 dark:bg-blue-900/30 blur-3xl opacity-40"
+    animate={{ x: [0, 20, 0], y: [0, 30, 0] }}
+    transition={{ duration: 15, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+  />
+  <motion.div
+    className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-purple-200 dark:bg-purple-900/30 blur-3xl opacity-40"
+    animate={{ x: [0, -20, 0], y: [0, -30, 0] }}
+    transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+  />
+
+  <div className="container mx-auto px-6 relative z-10">
+    <SectionHeader title="Tentang Saya" subtitle="Kenali lebih dekat siapa saya" />
+
+    <div className="flex flex-col lg:flex-row gap-12 items-center">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="lg:w-1/3 flex justify-center relative"
+      >
+        <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-blue-500 dark:border-blue-400 shadow-xl">
+          <Image
+            src="/assets/Profile.jpg"
+            alt="Yosia Tendean"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 33vw"
           />
-          <motion.div
-            className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-purple-200 dark:bg-purple-900/30 blur-3xl opacity-40"
-            animate={{
-              x: [0, -20, 0],
-              y: [0, -30, 0],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut",
-            }}
+        </div>
+
+        {/* Ikon Terapung */}
+        <motion.div
+          className="absolute -top-5 -left-5 bg-white dark:bg-gray-800 p-3 rounded-full shadow-lg border border-gray-200 dark:border-gray-700"
+          animate={{ y: [0, -10, 0], rotate: [0, 10, -10, 0] }}
+          transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
+        >
+          <FaPython className="text-blue-500 text-xl" />
+        </motion.div>
+        <motion.div
+          className="absolute -bottom-5 -right-5 bg-white dark:bg-gray-800 p-3 rounded-full shadow-lg border border-gray-200 dark:border-gray-700"
+          animate={{ y: [0, 10, 0], rotate: [0, -10, 10, 0] }}
+          transition={{ duration: 6, repeat: Infinity, repeatType: "reverse", delay: 1 }}
+        >
+          <SiLaravel className="text-red-600 text-xl" />
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="lg:w-2/3 space-y-6"
+      >
+        <AnimatedText
+          text="Pengembang Web & Penggemar Data"
+          className="text-2xl font-bold text-gray-900 dark:text-gray-200"
+        />
+        <motion.p
+          className="text-gray-600 dark:text-gray-300"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          Saya Yosia Tendean, mahasiswa Teknik Informatika yang memiliki semangat dalam bidang Web Development, Analisis Data, dan Machine Learning. Saya berfokus pada pembangunan aplikasi web yang efisien serta pemanfaatan AI untuk solusi nyata.
+        </motion.p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+          <AnimatedFeatureCard
+            icon={<FaUserGraduate className="text-blue-500 text-xl" />}
+            title="Pendidikan"
+            description="Mahasiswa Teknik Informatika di Universitas Negeri Manado"
+            color="bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400"
           />
+          <AnimatedFeatureCard
+            icon={<FaCode className="text-purple-500 text-xl" />}
+            title="Pengembangan Web"
+            description="Membuat website dan sistem yang cepat, modern, dan fungsional"
+            color="bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400"
+          />
+          <AnimatedFeatureCard
+            icon={<FaChartLine className="text-green-500 text-xl" />}
+            title="Analisis Data"
+            description="Mengubah data mentah menjadi wawasan yang berharga"
+            color="bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400"
+          />
+          <AnimatedFeatureCard
+            icon={<FaRobot className="text-orange-500 text-xl" />}
+            title="Pembelajaran Mesin"
+            description="Menjelajahi AI untuk otomatisasi dan pengambilan keputusan yang cerdas"
+            color="bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400"
+          />
+        </div>
 
-          <div className="container mx-auto px-6 relative z-10">
-            <SectionHeader
-              title="About Me"
-              subtitle="Get to know the person behind the code"
-            />
-
-            <div className="flex flex-col lg:flex-row gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="lg:w-1/3 flex justify-center relative"
-              >
-                <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-blue-500 dark:border-blue-400 shadow-xl">
-                  <Image
-                    src="/assets/profile.jpg"
-                    alt="Zonatan Sihombing"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-
-                <motion.div
-                  className="absolute -top-5 -left-5 bg-white dark:bg-gray-800 p-3 rounded-full shadow-lg border border-gray-200 dark:border-gray-700"
-                  animate={{
-                    y: [0, -10, 0],
-                    rotate: [0, 10, -10, 0],
-                  }}
-                  transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                  }}
-                >
-                  <FaPython className="text-blue-500 text-xl" />
-                </motion.div>
-
-                <motion.div
-                  className="absolute -bottom-5 -right-5 bg-white dark:bg-gray-800 p-3 rounded-full shadow-lg border border-gray-200 dark:border-gray-700"
-                  animate={{
-                    y: [0, 10, 0],
-                    rotate: [0, -10, 10, 0],
-                  }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    delay: 1,
-                  }}
-                >
-                  <SiLaravel className="text-red-600 text-xl" />
-                </motion.div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="lg:w-2/3 space-y-6"
-              >
-                <AnimatedText
-                  text="Full Stack Developer & Data Enthusiast"
-                  className="text-2xl font-bold text-gray-900 dark:text-gray-200"
-                />
-
-                <motion.p
-                  className="text-gray-600 dark:text-gray-300"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.4 }}
-                  viewport={{ once: true }}
-                >
-                  I'm an active Informatics Engineering student passionate about
-                  Web Development, Data Analysis, and Machine Learning. I
-                  specialize in creating modern, responsive websites while
-                  exploring how data and AI can drive meaningful solutions.
-                </motion.p>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                  <AnimatedFeatureCard
-                    icon={<FaUserGraduate className="text-blue-500 text-xl" />}
-                    title="Education"
-                    description="Informatics Engineering Student at Manado State University"
-                    color="bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400"
-                  />
-
-                  <AnimatedFeatureCard
-                    icon={<FaCode className="text-purple-500 text-xl" />}
-                    title="Web Development"
-                    description="Building functional, modern websites with clean code"
-                    color="bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400"
-                  />
-
-                  <AnimatedFeatureCard
-                    icon={<FaChartLine className="text-green-500 text-xl" />}
-                    title="Data Analysis"
-                    description="Extracting insights from data to drive decisions"
-                    color="bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400"
-                  />
-
-                  <AnimatedFeatureCard
-                    icon={<FaRobot className="text-orange-500 text-xl" />}
-                    title="Machine Learning"
-                    description="Exploring AI to automate processes and recognize patterns"
-                    color="bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400"
-                  />
-                </div>
-
-                <motion.div
-                  className="mt-6 p-4 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-800 border border-blue-100 dark:border-gray-700 relative overflow-hidden"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="absolute -top-3 -right-3 text-yellow-400 dark:text-yellow-300 opacity-20">
-                    <FaLightbulb className="text-6xl" />
-                  </div>
-                  <div className="flex items-center gap-3 relative z-10">
-                    <div className="text-pink-500 dark:text-pink-400">
-                      <FaHeart className="text-xl" />
-                    </div>
-                    <p className="text-gray-700 dark:text-gray-300 text-sm">
-                      I believe technology should create positive social impact.
-                      That's why I'm passionate about projects that combine
-                      technical challenge with real-world value.
-                    </p>
-                  </div>
-                </motion.div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="skills"
-          ref={skillsRef}
-          className="py-20 bg-white dark:bg-gray-950"
+        <motion.div
+          className="mt-6 p-4 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-800 border border-blue-100 dark:border-gray-700 relative overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          viewport={{ once: true }}
         >
-          <div className="container mx-auto px-6">
-            <SectionHeader
-              title="My Expertise"
-              subtitle="Technologies I've mastered through professional and personal projects"
-            />
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-12">
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={skill.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group p-6 bg-gray-50 dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 dark:border-gray-800 flex flex-col items-center"
-                >
-                  <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
-                    {skill.icon}
-                  </div>
-                  <h3 className="font-semibold text-lg text-center text-gray-900 dark:text-gray-200">
-                    {skill.name}
-                  </h3>
-                  <div className="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2 mt-4">
-                    <div
-                      className={`h-full rounded-full ${skill.levelColor}`}
-                      style={{ width: `${skill.level}%` }}
-                    />
-                  </div>
-                  <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                    {skill.level}% proficiency
-                  </span>
-                </motion.div>
-              ))}
-            </div>
+          <div className="absolute -top-3 -right-3 text-yellow-400 dark:text-yellow-300 opacity-20">
+            <FaLightbulb className="text-6xl" />
           </div>
-        </section>
-
-        <section
-          id="projects"
-          ref={projectsRef}
-          className="py-20 bg-gray-50 dark:bg-gray-900"
-        >
-          <div className="container mx-auto px-6">
-            <SectionHeader
-              title="Featured Projects"
-              subtitle="A showcase of my best work demonstrating my skills and capabilities"
-            />
-
-            <div className="space-y-16 mt-12">
-              {(showAllProjects ? projects : projects.slice(0, 4)).map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index} />
-              ))}
+          <div className="flex items-center gap-3 relative z-10">
+            <div className="text-pink-500 dark:text-pink-400">
+              <FaHeart className="text-xl" />
             </div>
+            <p className="text-gray-700 dark:text-gray-300 text-sm">
+              Saya percaya bahwa teknologi harus memberikan dampak nyata. Saya berkomitmen menggunakan keterampilan saya untuk menciptakan perubahan positif.
+            </p>
+          </div>
+        </motion.div>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
-            <motion.div
-              className="mt-12 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
+
+<section
+  id="skills"
+  ref={skillsRef}
+  className="py-20 bg-white dark:bg-gray-950"
+>
+  <div className="container mx-auto px-6">
+    <SectionHeader
+      title="My Expertise"
+      subtitle="Technologies I've mastered through professional and personal projects"
+    />
+
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-12">
+      {skills.map((skill, index) => (
+        <motion.div
+          key={skill.name}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          className="group p-6 bg-gray-50 dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-200 dark:border-gray-800 flex flex-col items-center"
+        >
+          <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
+            {skill.icon}
+          </div>
+          <h3 className="font-semibold text-lg text-center text-gray-900 dark:text-gray-200">
+            {skill.name}
+          </h3>
+          <div className="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2 mt-4">
+            <div
+              className={`h-full rounded-full ${skill.levelColor}`}
+              style={{ width: `${skill.level}%` }}
+            />
+          </div>
+          <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+            {skill.level}% proficiency
+          </span>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+<section
+  id="projects"
+  ref={projectsRef}
+  className="py-20 bg-gray-50 dark:bg-gray-900"
+>
+  <div className="container mx-auto px-6">
+    <SectionHeader
+      title="My Projects"
+      subtitle="Beberapa proyek terbaik yang pernah saya kerjakan sebagai bukti nyata keterampilan saya"
+    />
+
+    <div className="space-y-16 mt-12">
+      {projects.map((project, index) => (
+        <ProjectCard key={project.id} project={project} index={index} />
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
+<section
+  id="certificates"
+  ref={certificatesRef}
+  className="py-20 bg-white dark:bg-gray-950"
+>
+  <div className="container mx-auto px-6">
+    <SectionHeader
+      title="Sertifikasi"
+      subtitle="Sertifikat yang saya raih sebagai bukti pembelajaran berkelanjutan dan pengembangan profesional"
+    />
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+      {certificates.map((cert, index) => (
+        <motion.div
+          key={cert.id}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          className="group overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-800"
+        >
+          <div className="relative aspect-video overflow-hidden">
+            <Image
+              src={`/assets/sertif/sertif${cert.id}.jpg`}
+              alt={cert.title}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          </div>
+          <div className="p-6">
+            <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-200">
+              {cert.title}
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+              {cert.issuer} • {cert.date}
+            </p>
+            <a
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium"
             >
-              <button
-                onClick={() => setShowAllProjects(!showAllProjects)}
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg font-medium transition-colors shadow-lg"
-              >
-                {showAllProjects ? "Show less" : "Show More Projects"}
-              </button>
-            </motion.div>
+              Lihat Sertifikat <FaExternalLinkAlt className="ml-1 text-xs" />
+            </a>
           </div>
-        </section>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
-        <section
-          id="certificates"
-          ref={certificatesRef}
-          className="py-20 bg-white dark:bg-gray-950"
-        >
-          <div className="container mx-auto px-6">
-            <SectionHeader
-              title="Certifications"
-              subtitle="Proof of my continuous learning and professional development"
-            />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-              {certificates.map((cert, index) => (
-                <motion.div
-                  key={cert.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-800"
-                >
-                  <div className="relative aspect-video overflow-hidden">
-                    <Image
-                      src={`/assets/sertif/sertif${cert.id}.jpg`}
-                      alt={cert.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-200">
-                      {cert.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                      {cert.issuer} • {cert.date}
-                    </p>
-                    <a
-                      href={cert.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium"
-                    >
-                      View credential{" "}
-                      <FaExternalLinkAlt className="ml-1 text-xs" />
-                    </a>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         <section
           id="contact"
           ref={contactRef}
           className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800"
+>
+        <div className="container mx-auto px-6">
+        <div className="max-w-3xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-200">
+        Let's Collaborate and Make Great Things Happen
+        </h2>
+        <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+        I'm Yosia Tendean — passionate about crafting innovative digital experiences. 
+        Whether you have an idea to discuss or just want to connect, feel free to reach out. 
+        Let’s build something impactful together.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="mailto:yosiatendean@gmail.com"
+          className="px-8 py-4 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg font-medium transition-colors shadow-lg flex items-center justify-center gap-2"
         >
-          <div className="container mx-auto px-6">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-200">
-                Let's Build Something Amazing Together
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                Whether you have a project in mind or just want to chat about
-                technology, I'd love to hear from you. Get in touch and let's
-                create something exceptional.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="mailto:zonatan.sh03@gmail.com"
-                  className="px-8 py-4 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg font-medium transition-colors shadow-lg flex items-center justify-center gap-2"
-                >
-                  <FaEnvelope className="text-xl" />
-                  Email Me
-                </a>
-                <a
-                  href="https://linkedin.com/in/zonatan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg font-medium transition-colors border border-gray-300 dark:border-gray-600 shadow-lg flex items-center justify-center gap-2"
-                >
-                  <FaLinkedin className="text-xl" />
-                  Connect on LinkedIn
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+          <FaEnvelope className="text-xl" />
+          Email Yosia
+        </a>
+        <a
+          href="https://linkedin.com/in/yosiatendean"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-8 py-4 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg font-medium transition-colors border border-gray-300 dark:border-gray-600 shadow-lg flex items-center justify-center gap-2"
+        >
+          <FaLinkedin className="text-xl" />
+          Connect on LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
         <footer className="py-8 bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
           <div className="container mx-auto px-6 text-center">
@@ -1040,32 +919,32 @@ function ProjectCard({
 function TechBubbles() {
   const techs = [
     {
-      icon: <FaReact className="text-blue-500" />,
-      name: "React",
+      icon: <FaHtml5 className="text-orange-600" />,
+      name: "HTML",
       size: "w-16 h-16",
       delay: 0,
     },
     {
-      icon: <SiNextdotjs className="text-black dark:text-white" />,
-      name: "Next.js",
+      icon: <FaCss3Alt className="text-blue-600" />,
+      name: "CSS",
       size: "w-16 h-16",
       delay: 0.2,
     },
     {
-      icon: <SiTypescript className="text-blue-600" />,
-      name: "TypeScript",
+      icon: <FaJs className="text-yellow-400" />,
+      name: "JavaScript",
       size: "w-16 h-16",
       delay: 0.4,
     },
     {
-      icon: <FaNodeJs className="text-green-500" />,
-      name: "Node.js",
+      icon: <FaPython className="text-blue-500" />,
+      name: "Python",
       size: "w-16 h-16",
       delay: 0.6,
     },
     {
-      icon: <SiTailwindcss className="text-cyan-500" />,
-      name: "Tailwind",
+      icon: <FaDatabase className="text-indigo-700" />,
+      name: "MySQL",
       size: "w-16 h-16",
       delay: 0.8,
     },
@@ -1116,63 +995,17 @@ const skills = [
   {
     name: "JavaScript",
     icon: <FaJs className="text-yellow-500" />,
-    level: 80,
+    level: 88,
     levelColor: "bg-yellow-500",
   },
-  {
-    name: "TypeScript",
-    icon: <SiTypescript className="text-blue-600" />,
-    level: 70,
-    levelColor: "bg-blue-600",
-  },
-  {
-    name: "React",
-    icon: <FaReact className="text-blue-400" />,
-    level: 70,
-    levelColor: "bg-blue-400",
-  },
-  {
-    name: "Next.js",
-    icon: <SiNextdotjs className="text-black dark:text-white" />,
-    level: 70,
-    levelColor: "bg-gray-800 dark:bg-gray-300",
-  },
-  {
-    name: "Node.js",
-    icon: <FaNodeJs className="text-green-500" />,
-    level: 70,
-    levelColor: "bg-green-500",
-  },
-  {
+
+ {
     name: "Python",
     icon: <FaPython className="text-blue-600" />,
     level: 70,
     levelColor: "bg-blue-600",
   },
-  {
-    name: "MongoDB",
-    icon: <SiMongodb className="text-green-400" />,
-    level: 65,
-    levelColor: "bg-green-400",
-  },
-  {
-    name: "PostgreSQL",
-    icon: <SiPostgresql className="text-blue-500" />,
-    level: 65,
-    levelColor: "bg-blue-500",
-  },
-  {
-    name: "Tailwind",
-    icon: <SiTailwindcss className="text-cyan-400" />,
-    level: 85,
-    levelColor: "bg-cyan-400",
-  },
-  {
-    name: "Laravel",
-    icon: <SiLaravel className="text-red-600" />,
-    level: 85,
-    levelColor: "bg-red-600",
-  },
+
   {
     name: "MySQL",
     icon: <FaDatabase className="text-blue-600" />,
@@ -1192,96 +1025,60 @@ type ProjectType = {
 
 const projects: ProjectType[] = [
   {
-    id: 6,
-    title: "Learning Management and Attendance System Using QR Code",
-    description:
-      "QR Code-Based LMS and Attendance System is a web app that combines learning management with QR code attendance. Students scan a unique QR code to check in, triggering an automatic email notification to parents. Teachers can manage schedules, share materials, and track progress—all in one platform. This system enhances transparency and streamlines classroom management with real-time monitoring and smart notifications.",
-    technologies: ["Laravel","Web Development", "UI/UX Design"],
-    githubLink: "https://github.com/bryanwalujan/Smk2_fix",
-    demoLink: "https://github.com/bryanwalujan/Smk2_fix",
-  },
-  
-  {
-    id: 4,
-    title: "Church Mentoring Website",
-    description:
-      "This is the website of the GSJA church mentoring system in Indonesia, where on this website there are pages of church networks and workshops carried out by the church network throughout Indonesia which is divided into 5 regions.",
-    technologies: ["Laravel","Tailwind","Website Development", "UI/UX Design"],
-    githubLink: "https://github.com/bryanwalujan/website_gereja",
-    demoLink: "https://kingdomexpansion.id/",
-  },
-  {
-    id: 5,
-    title: "AI Major Recommendation System",
-    description:
-      "An AI-based college major recommendation system that helps students determine the optimal choice of major based on personality, interests, and abilities using the Decision Tree algorithm.",
-    technologies: ["Flask","Website Development", "Machine Learning"],
-    githubLink: "https://github.com/zonatan/Rekomendasi-Jurusan",
-    demoLink: "https://github.com/zonatan/Rekomendasi-Jurusan",
-  },
-  {
-    id: 2,
-    title: "Library Management System",
-    description:
-      "Comprehensive library management solution with online member registration, book inventory, and lending system. Features include real-time availability checks, automated reminders, and detailed reporting.",
-    technologies: ["PHP","Bootsrap","Web Development"],
-    githubLink: "https://github.com/zonatan/Sistem-Perpustakaan",
-    demoLink: "https://github.com/zonatan/Sistem-Perpustakaan",
-  },
-  {
-    id: 3,
-    title: "Company Portfolio",
-    description:
-      "Professional business portfolio website with modern design aesthetics. Features services showcase, team profiles, client testimonials, and contact forms. Built with performance and SEO best practices in mind.",
-    technologies: ["Tailwind","UI/UX Design"],
-    githubLink: "https://github.com/zonatan/company-portfolio",
-    demoLink: "https://zonatan.github.io/company-portfolio/",
-  },
-  {
-    id: 1,
-    title: "Motorbike Club Website",
-    description:
-      "Modern static website for a motorcycle enthusiast club featuring responsive design, smooth animations, and clean UI. Showcases events, member galleries, and club information with an engaging user experience.",
-    technologies: ["HTML","CSS","UI/UX Design"],
-    githubLink: "https://github.com/zonatan/ClubMotor",
-    demoLink: "https://zonatan.github.io/ClubMotor/",
-  },
+  id: 1,
+  title: "Sistem Pemetaan Wisata Alam di Tomohon",
+  description:
+    "Sebuah platform web interaktif yang memetakan destinasi wisata alam terbaik di Kota Tomohon. Dilengkapi dengan peta digital, informasi lengkap destinasi, galeri visual, dan rute akses yang ramah pengguna. Aplikasi ini mendukung promosi pariwisata berbasis digital dan dirancang untuk meningkatkan pengalaman wisatawan dengan eksplorasi yang lebih informatif, efisien, dan menarik.",
+  technologies: ["Web Development", "UI/UX Design", "GIS"],
+  githubLink: "", // Tambahkan jika ada
+  demoLink: "",   // Tambahkan jika ada
+},
+ {
+  id: 2,
+  title: "ComputerStore Web",
+  description:
+    "Website penjualan lengkap untuk ComputerStore yang menyediakan berbagai macam alat dan komponen komputer. Fitur mencakup katalog produk, sistem keranjang belanja, checkout, serta pengelolaan stok barang secara real-time.",
+  technologies: ["Web Development"],
+  githubLink: "",
+  demoLink: "",
+},
+
+ {
+  id: 3,
+  title: "8-Puzzle Solver with A* Algorithm",
+  description:
+    "Solusi cerdas untuk teka-teki 8-Puzzle yang sepenuhnya dikembangkan dengan Python murni, menggunakan algoritma A* (A-Star) untuk menemukan jalur tercepat menuju solusi. Dengan penerapan heuristik Manhattan Distance, proyek ini menunjukkan efisiensi tinggi dalam pencarian ruang status yang kompleks. Cocok sebagai demonstrasi kemampuan dalam algoritma pencarian optimal, struktur data, dan problem-solving berbasis AI.",
+  technologies: ["Python", "A* Algorithm", "Heuristic Search", "AI"],
+  githubLink: "",
+  demoLink: "",
+},
+
+ {
+  id: 4,
+  title: "DoReMiMart - Music Instrument Store",
+  description:
+    "DoReMiMart adalah platform e-commerce elegan yang dirancang khusus untuk para pecinta musik. Menyediakan berbagai alat musik mulai dari gitar, piano, drum, hingga aksesoris pendukung, website ini menghadirkan pengalaman belanja yang harmonis dengan tampilan modern, navigasi intuitif, dan sistem keranjang belanja yang responsif. Cocok untuk musisi pemula hingga profesional, DoReMiMart menjadi tempat terbaik untuk menemukan nada-nada baru.",
+  technologies: ["Web Development", "E-Commerce", "UI/UX"],
+  githubLink: "",
+  demoLink: "",
+},
+
+ 
 ];
 
 const certificates = [
   {
     id: "1",
-    title: "Basic Data",
-    issuer: "MySkill",
-    date: "2025",
-    link: "https://storage.googleapis.com/myskill-v2-certificates/topic-PDDPBK4W7Z3skoQ70VQH/bmfpKRMnGTbCvKUksoDgErdel9m1-YRAGQ6GNQM7cCs8SFKw0.pdf",
+    title: "Junior Web Developer",
+    issuer: "Coding Bootcamp",
+    date: "2024",
+    link: "#",
   },
   {
     id: "2",
-    title: "API Introduction",
-    issuer: "MySkill",
-    date: "2025",
-    link: "https://storage.googleapis.com/myskill-v2-certificates/course-SwFiuww5ziXxhrNM5eOh/bmfpKRMnGTbCvKUksoDgErdel9m1-0Yw3sg6j8mLqcND2cpcx.pdf",
-  },
-  {
-    id: "3",
-    title: "Website Development Fundamental",
-    issuer: "MySkill",
-    date: "2025",
-    link: "https://storage.googleapis.com/myskill-v2-certificates/topic-IXppB88r5Rj19e8Pm65p/bmfpKRMnGTbCvKUksoDgErdel9m1-zyJ1IMlhP4ffZn75vOWT.pdf",
-  },
-  {
-    id: "4",
-    title: "Junior Web Developer",
-    issuer: "Digital Talent Scholarship",
-    date: "2024",
-    link: "https://drive.google.com/file/d/1a_xbMQFZRDGNsJoDmUvoL9vh60YOMdNL/view?usp=drive_link",
-  },
-  {
-    id: "5",
     title: "Junior Network Administrator",
-    issuer: "Digital Talent Scholarship",
+    issuer: "Online Course Platform",
     date: "2024",
-    link: "https://drive.google.com/file/d/1Vrs_RCG-5y1SNW52MzdMwqqjbWzbL_LX/view?usp=drive_link",
+    link: "#",
   },
 ];
